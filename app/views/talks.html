@@ -1,0 +1,14 @@
+
+<h1>The talks on offer this year are</h1>
+
+<div ng-repeat="talkItem in talks.talksList">
+	<h2>{{talkItem.subject}}</h2>
+	<p>{{talkItem.description}}</p>
+	<p>Features:</p>
+	<ul ng-repeat="feature in talkItem.features">
+		<li>{{feature}}</li>
+	</ul>
+	<p>Venue: {{talkItem.venue}}</p>
+	<p>Number of attendees: {{talks.getNumberOfAttendees(talkItem.id)}}</p>
+	<br/>
+</div>
