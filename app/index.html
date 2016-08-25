@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="barcelonaApp">
   <head>
     <meta charset="utf-8">
     <title></title>
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="barcelonaApp">
+  <body ng-controller="BaseCtrl as baseCtrl">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -39,22 +39,30 @@
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
             <ul class="nav navbar-nav">
-              <li class="active"><a ng-href="#/">Home</a></li>
-              <li><a ng-href="#/about">About</a></li>
-              <li ng-if="loggedIn"><a ng-href="#/talks">Talks</a></li>
-              <li ng-if="loggedIn"><a ng-href="#/attendees">Attendees</a></li>
+              <li ng-class="{active: baseCtrl.isSet(1)}">
+                <a ng-href="#/" ng-click="baseCtrl.setTab(1)">Home</a>
+              </li>
+              <li ng-class="{active: baseCtrl.isSet(2)}">
+                <a ng-href="#/about" ng-click="baseCtrl.setTab(2)">About</a>
+              </li>
+              <li ng-show="baseCtrl.loggedIn" ng-class="{active: baseCtrl.isSet(3)}">
+                <a ng-href="#/talks" ng-click="baseCtrl.setTab(3)">Talks</a>
+              </li>
+              <li ng-show="baseCtrl.loggedIn" ng-class="{active: baseCtrl.isSet(4)}">
+                <a ng-href="#/attendees" ng-click="baseCtrl.setTab(4)">Attendees</a>
+              </li>
             </ul>
           </div>
           <div>
-            <p ng-show="loggedIn">Hi, Tom!</p>
-            <button ng-click="logInOut()">{{loginButtonMessage}}</button>
+            <p ng-show="baseCtrl.loggedIn">Hi, Tom!</p>
+            <button ng-click="baseCtrl.logInOut('usr', 'pass')">{{baseCtrl.loginButtonMessage}}</button>
           </div>
         </div>
       </div>
     </div>
 
     <div class="container">
-    <div ng-view=""></div>
+    <div ng-view="" ng-show="baseCtrl.showPage()"></div>
     </div>
 
     <div class="footer">
@@ -96,9 +104,11 @@
         <script src="scripts/router.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/base.js"></script>
         <script src="scripts/controllers/talks.js"></script>
         <script src="scripts/controllers/attendees.js"></script>
         <script src="scripts/services/attendeeService.js"></script>
+        <script src="scripts/services/loginService.js"></script>
         <script src="scripts/services/talksService.js"></script>
         <script src="scripts/directives/loginDirective.js"></script>
         <script src="scripts/directives/personDirective.js"></script>

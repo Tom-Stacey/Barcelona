@@ -7,6 +7,8 @@
  * # AttendeeService
  * Service of the barcelonaApp
  */
+
+(function() {
 angular.module('barcelonaApp')
   .service('attendeesService', function () {
 
@@ -62,3 +64,4 @@ angular.module('barcelonaApp')
     	return attendees;
     };
   });
+})();

@@ -7,6 +7,8 @@
  * # TalksServoce
  * Service of the barcelonaApp
  */
+
+(function() {
 angular.module('barcelonaApp')
   .service('talksService', function () {
 
@@ -53,3 +55,4 @@ angular.module('barcelonaApp')
       return talks.find(talk => talk.id === talkId).attendees.length;
     };
   });
+})();

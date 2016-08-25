@@ -7,6 +7,8 @@
  * # MainCtrl
  * Controller of the barcelonaApp
  */
+
+(function() {
 angular.module('barcelonaApp')
   .controller('MainCtrl', function () {
     this.awesomeThings = [
@@ -15,3 +17,4 @@ angular.module('barcelonaApp')
       'Karma'
     ];
   });
+})();

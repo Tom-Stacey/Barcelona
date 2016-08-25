@@ -7,6 +7,8 @@
  * # TalksCtrl
  * Controller of the barcelonaApp
  */
+
+(function() {
 angular.module('barcelonaApp')
   .controller('TalksCtrl', function ($scope, attendeesService, talksService) {
   	
@@ -15,3 +17,4 @@ angular.module('barcelonaApp')
   		return talksService.getTotalAttendees(talkId);
   	};
   });
+})();

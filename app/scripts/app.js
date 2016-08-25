@@ -10,6 +10,8 @@
  *
  * Main module of the application.
  */
+
+(function() {
 angular
   .module('barcelonaApp', [
     'ngAnimate',
@@ -41,13 +43,6 @@ angular
     }, 0);
     $(window).on('scroll', check);
     $(window).on('resize', check);
-
-    $rootScope.loggedIn = false;
-    $rootScope.loginButtonMessage = 'Log in';
-    $rootScope.logInOut = function() {
-      $rootScope.loggedIn = !$rootScope.loggedIn;
-      $rootScope.loginButtonMessage = ($rootScope.loggedIn ? 'Log out' : 'Log in');
-      $rootScope.userId = ($rootScope.loggedIn ? 1 : null);
-    };
     
   });
+})();

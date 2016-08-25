@@ -7,8 +7,11 @@
  * # AttendeesCtrl
  * Controller of the barcelonaApp
  */
-angular.module('barcelonaApp')
-  .controller('AttendeesCtrl', function ($scope, attendeesService) {
-  	
-  	this.atts = attendeesService.getAllAttendees();
-  });
+
+(function() {
+	angular.module('barcelonaApp')
+	  .controller('AttendeesCtrl', function ($scope, attendeesService) {
+	  	
+	  	this.atts = attendeesService.getAllAttendees();
+	  });
+})();

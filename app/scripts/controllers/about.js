@@ -7,6 +7,9 @@
  * # AboutCtrl
  * Controller of the barcelonaApp
  */
+ 
+(function() {
 angular.module('barcelonaApp')
   .controller('AboutCtrl', function () {
   });
+})();
