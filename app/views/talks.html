@@ -1,14 +1,38 @@
 
-<h1>The talks on offer this year are</h1>
-
-<div ng-repeat="talkItem in talks.talksList">
-	<h2>{{talkItem.subject}}</h2>
-	<p>{{talkItem.description}}</p>
-	<p>Features:</p>
-	<ul ng-repeat="feature in talkItem.features">
-		<li>{{feature}}</li>
-	</ul>
-	<p>Venue: {{talkItem.venue}}</p>
-	<p>Number of attendees: {{talks.getNumberOfAttendees(talkItem.id)}}</p>
-	<br/>
+<h2 class="titleCentered">Check out the agenda for the Barcelona Symposium 2016</h2>
+<div class="containerTable">
+  <table id="contact" class="table">
+    <thead class="thead-default">
+      <tr>
+        <th>#</th>
+        <th>Talk</th>
+        <th>Speaker</th>
+        <th>Location</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat-start="talk in talks.talksList">
+          <th scope="row">{{$index + 1}}</th>
+          <td>{{talk.subject}}</td>
+          <td>{{talk.speaker}}</td>
+          <td>{{talk.venue}}</td>
+          <td><a ng-click="talks.signOnOff(talk.id)" class="btn btn-md btn-primary">{{talks.getRegisterMessage(talk.id)}}</a></td>
+          <td><a ng-click="talks.showHideDetails(talk.id)" class="btn btn-md btn-primary">{{talks.getDetailsMessage(talk.id)}}</a></td>
+      </tr>
+      <tr ng-repeat-end ng-show="talks.detailsVisible(talk.id)">
+          <td colspan="3">{{talk.description}}</td>
+          <td colspan="2">
+          	<p>Features:</p>
+          	<li ng-repeat="feature in talk.features">
+          		<ul>{{feature}}</ul>
+          	</li>
+          </td>
+          <td>
+          	<p>Attendees: {{talks.getNumberOfAttendees(talk.id)}}</p>
+          </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

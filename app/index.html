@@ -13,6 +13,7 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/custom.css" />
     <!-- endbuild -->
   </head>
   <body ng-controller="BaseCtrl as baseCtrl">
@@ -33,11 +34,13 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="#/">barcelona</a>
           </div>
 
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+          <div class="collapse navbar-collapse qaheader" id="js-navbar-collapse">
 
+            <a href="#/" class="navbar-brand">
+                <img src="images/QAC1.png" />
+            </a>
             <ul class="nav navbar-nav">
               <li ng-class="{active: baseCtrl.isSet(1)}">
                 <a ng-href="#/" ng-click="baseCtrl.setTab(1)">Home</a>
