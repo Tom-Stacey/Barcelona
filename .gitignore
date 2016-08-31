@@ -6,3 +6,4 @@
 
 build/
 dist/
+/bower_components
