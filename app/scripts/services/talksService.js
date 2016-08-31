@@ -56,11 +56,15 @@ angular.module('barcelonaApp')
     };
 
     this.addAttendee = function(talkId, userId) {
-
+      getTalkById(talkId).attendees.push(userId);
     };
 
     this.removeAttendee = function(talkId, userId) {
-
+      var talk = getTalkById(talkId);
+      var index = talk.attendees.indexOf(userId);
+      if(index > -1) {
+        talk.attendees.splice(index, 1);
+      }
     };
 
     this.getTotalAttendees = function(talkId) {
