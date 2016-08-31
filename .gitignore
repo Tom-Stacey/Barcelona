@@ -6,4 +6,4 @@
 
 build/
 dist/
-bower_components
+/bower_components
