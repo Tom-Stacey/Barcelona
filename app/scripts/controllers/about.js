@@ -11,5 +11,6 @@
 (function() {
 angular.module('barcelonaApp')
   .controller('AboutCtrl', function () {
+  	this.amenities = ['Swimming pool', 'Restaurant', 'Bar', 'Guided tours'];
   });
 })();
