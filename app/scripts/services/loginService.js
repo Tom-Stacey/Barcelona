@@ -15,7 +15,7 @@
       var userId = 0;
 
     	this.login = function(usr, pass) {
-        if(usr === 'usr' && pass === 'pass') {
+        if(usr === 'tom@qa.com' && pass === 'pass') {
           userId = 1;
           return true;
         } else {

@@ -24,6 +24,7 @@ angular
     'ngTouch'
   ])
   .run(function($rootScope) {
+
     var lastCheck = 0;
     var CHECK_INTERVAL = 500; //ms interval for checking at bottom of page
 
@@ -32,7 +33,7 @@ angular
         lastCheck = Date.now();
 
         if($(window).scrollTop() >=
-            $(document).height() - $(window).height() - 50) {
+            $(document).height() - $(window).height() - 100) {
           $rootScope.$broadcast('SCROLL_TO_BOTTOM');
         }
       }

@@ -1,1 +1,32 @@
-<p>This year, the QA Consulting annual conference is taking place in sunny Barcelona!</p>
+
+<h2>This year, the QA Consulting Symposium is taking place at the Melia Sky hotel in sunny Barcelona!</h2>
+
+<h3>About the location</h3>
+<p>The Melia Sky is a four star hotel located in the centre of Barcelona, convenient both for the beach and the bustling city centre. As well as top class meeting rooms and breakout areas, it has a whole host of ways to unwind.</p>
+
+<div class="row">
+	<div class="col-md-8">
+		<div class="text-xs-center hotel-image">
+			<img ng-src="{{about.mainImageLoc()}}" class="img-responsive">
+		</div>
+		<span ng-repeat="img in about.images">
+			<img ng-src="{{about.imageLoc($index)}}" class="img-thumbnail hotel-thumbnail" ng-click="about.setMainImage($index)">
+		</span>
+	</div>
+
+	<div class="col-md-4">
+		<h3>Hotel Amenities:</h3>
+		<ul ng-repeat="amenity in about.amenities">
+			<li>{{amenity}}</li>
+		</ul>
+	</div>
+</div>
+
+<div>
+	<h3>Talks and breakout sessions</h3>
+
+	<p>There will be a keynote address for everyone to attend on Saturday morning, followed by a selection of brekout sessions for you to choose from. Each breakout session will include a presentation and code demonstration, followed by an interactive hackathon so you can get hands on with the technology.</p>
+
+	<p ng-show="loggedIn">You can view more information and sign up for the breakout sessions <a ng-href="#/talks">here</a>.</p>
+	<p ng-hide="loggedIn"><a ng-href="#/login">Log In</a> for more information and to sign up for the breakout sessions.</p>
+</div>

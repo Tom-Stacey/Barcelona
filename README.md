@@ -16,3 +16,8 @@ grunt
 
 and preview the application with:  
 grunt serve  
+
+## Login details
+To log in to the service use:  
+username: tom@qa.com  
+password: pass

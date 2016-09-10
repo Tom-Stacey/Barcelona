@@ -1,7 +1,27 @@
 
 
-<h1>Conference Attendees</h1>
+<h1>Symposium Attendees</h1>
 
-<div ng-repeat="attendee in attendees.atts">
-	<person-directive></person-directive>
+<div class="containerTable">
+  <table id="contact" class="table">
+    <thead class="thead-default">
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Interests</th>
+        <th>Workplace</th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="attendee in atts">
+          <th scope="row">{{$index + 1}}</th>
+          <td>{{attendee.firstName+' '+attendee.surname}}</td>
+          <td>
+          	<ul ng-repeat="tech in attendee.technologies">
+          		<li>{{tech}}</li>
+          	</ul>
+          </td>
+          <td>{{attendee.location}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>

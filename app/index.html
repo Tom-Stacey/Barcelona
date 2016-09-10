@@ -48,17 +48,22 @@
               <li ng-class="{active: baseCtrl.isSet(2)}">
                 <a ng-href="#/about" ng-click="baseCtrl.setTab(2)">About</a>
               </li>
-              <li ng-show="baseCtrl.loggedIn" ng-class="{active: baseCtrl.isSet(3)}">
+              <li ng-show="loggedIn" ng-class="{active: baseCtrl.isSet(3)}">
                 <a ng-href="#/talks" ng-click="baseCtrl.setTab(3)">Talks</a>
               </li>
-              <li ng-show="baseCtrl.loggedIn" ng-class="{active: baseCtrl.isSet(4)}">
+              <li ng-show="loggedIn" ng-class="{active: baseCtrl.isSet(4)}">
                 <a ng-href="#/attendees" ng-click="baseCtrl.setTab(4)">Attendees</a>
               </li>
             </ul>
+          <div class="loginSection">
+            <div ng-hide="loggedIn">
+              <a class="btn btn-primary" role="button" ng-href="#/login">Log in</a>
+            </div>
+            <div ng-show="loggedIn">
+              <span>Hi, Tom!</span>
+              <a class="btn btn-primary" role="button" ng-click="baseCtrl.logOut()">Log out</a>
+            </div>
           </div>
-          <div>
-            <p ng-show="baseCtrl.loggedIn">Hi, Tom!</p>
-            <button ng-click="baseCtrl.logInOut('usr', 'pass')">{{baseCtrl.loginButtonMessage}}</button>
           </div>
         </div>
       </div>
@@ -67,6 +72,13 @@
     <div class="container">
     <div ng-view="" ng-show="baseCtrl.showPage()"></div>
     </div>
+    <div class="container">
+    <div ng-hide="baseCtrl.showPage()">
+      <h2>You must be logged in to view this page</h2>
+      <p>Cick <a ng-href="#/login">here</a> to log in.</p>
+    </div>
+    </div>
+
 
     <div class="footer">
       <div class="container">
@@ -105,9 +117,10 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/router.js"></script>
-        <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/base.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/talks.js"></script>
         <script src="scripts/controllers/attendees.js"></script>
         <script src="scripts/services/attendeeService.js"></script>

@@ -8,6 +8,11 @@ angular.module('barcelonaApp').config(function($routeProvider) {
       controller: 'MainCtrl',
       controllerAs: 'main'
     })
+    .when('/login', {
+      templateUrl: 'views/login.html',
+      controller: 'loginCtrl',
+      controllerAs: 'login'
+    })
     .when('/about', {
       templateUrl: 'views/about.html',
       controller: 'AboutCtrl',

@@ -63,12 +63,10 @@ angular.module('barcelonaApp')
     
 
     function unRegister(talkId) {
-    	talksService.removeAttendee(talkId, userId);
-    	removeAttendee(talkId);
+      removeAttendee(talkId);
     }
 
     function register(talkId) {
-    	talksService.addAttendee(talkId, userId);
     	addAttendee(talkId);
     }
 

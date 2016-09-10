@@ -10,7 +10,7 @@
 
 (function() {
 angular.module('barcelonaApp')
-  .controller('BaseCtrl', function (loginService) {
+  .controller('BaseCtrl', function (loginService, $rootScope) {
   	this.activeTab = 1;
 
   	this.setTab = function(tabNum) {
@@ -22,7 +22,7 @@ angular.module('barcelonaApp')
   	};
 
   	this.showPage = function() {
-  		if(this.loggedIn) {
+  		if($rootScope.loggedIn) {
   			return true;
   		} else if(this.activeTab === 1 || this.activeTab === 2) {
   			return true;
@@ -31,21 +31,11 @@ angular.module('barcelonaApp')
   		}
   	};
 
-
-  	this.loggedIn = false;
-  	this.loginButtonMessage = 'Log in';
-
-    this.logInOut = function(usr, pass) {
-      if(this.loggedIn) {
-      	this.loggedIn = false;
-      	this.loginButtonMessage = 'Log in';
-      } else {
-      	if(loginService.login(usr, pass)) {
-      		this.loggedIn = true;
-      		this. loginButtonMessage = 'Log out';
-      	}
-      }
+    this.logOut = function() {
+      console.log('wotcha');
+      $rootScope.loggedIn = false;
     };
+
 
   });
 })();

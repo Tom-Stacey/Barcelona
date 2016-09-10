@@ -2,6 +2,10 @@
     background: #005baa;
 }
 
+h3 {
+  color: #337ab7;
+}
+
 .navbar-default .navbar-nav>li>a{    
     color: white;
 }
@@ -221,4 +225,32 @@ fieldset {
 .navbar-default .navbar-nav>.active>a:focus, 
 .navbar-default .navbar-nav>.active>a:hover{
 font-weight: bold;
+}
+
+.userErr {
+  color: red;
+}
+
+.loginSection {
+  padding-top: 8px;
+  float: right;
+  color: #FFF;
+}
+
+.loginSection span {
+  padding-right: 10px;
+}
+
+.hotel-image {
+  max-width: 400px;
+  margin-bottom: 15px;
+  border: solid;
+}
+
+.hotel-thumbnail {
+  width: 100px;
+}
+
+.wrapped-btn {
+  white-space: normal;
 }
