@@ -10,7 +10,7 @@
 
 (function() {
 angular.module('barcelonaApp')
-  .controller('BaseCtrl', function (loginService, $rootScope) {
+  .controller('BaseCtrl', function (loginService, $rootScope, $location) {
   	this.activeTab = 1;
 
   	this.setTab = function(tabNum) {
@@ -26,6 +26,8 @@ angular.module('barcelonaApp')
   			return true;
   		} else if(this.activeTab === 1 || this.activeTab === 2) {
   			return true;
+      } else if($location.absUrl().includes('login')) {
+        return true;
   		} else {
   			return false;
   		}
