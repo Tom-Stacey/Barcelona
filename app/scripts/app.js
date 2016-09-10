@@ -33,7 +33,7 @@ angular
         lastCheck = Date.now();
 
         if($(window).scrollTop() >=
-            $(document).height() - $(window).height() - 100) {
+            $(document).height() - $(window).height() - 200) {
           $rootScope.$broadcast('SCROLL_TO_BOTTOM');
         }
       }
