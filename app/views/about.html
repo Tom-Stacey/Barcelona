@@ -7,17 +7,17 @@
 <div class="row">
 	<div class="col-md-8">
 		<div class="text-xs-center hotel-image">
-			<img ng-src="{{about.mainImageLoc()}}" class="img-responsive">
+			<img ng-src="{{<<MAIN_IMAGE_LOCATION>>}}" class="img-responsive" alt="main image">
 		</div>
 		<span ng-repeat="img in about.images">
-			<img ng-src="{{about.imageLoc($index)}}" class="img-thumbnail hotel-thumbnail" ng-click="about.setMainImage($index)">
+			<img ng-src="{{<<IMAGE_LOCATION>>}}" class="img-thumbnail hotel-thumbnail" ng-click="about.setMainImage($index)" alt="thumbail image">
 		</span>
 	</div>
 
 	<div class="col-md-4">
 		<h3>Hotel Amenities:</h3>
-		<ul ng-repeat="amenity in about.amenities">
-			<li>{{amenity}}</li>
+		<ul>
+			<li></li>
 		</ul>
 	</div>
 </div>
@@ -27,6 +27,6 @@
 
 	<p>There will be a keynote address for everyone to attend on Saturday morning, followed by a selection of brekout sessions for you to choose from. Each breakout session will include a presentation and code demonstration, followed by an interactive hackathon so you can get hands on with the technology.</p>
 
-	<p ng-show="loggedIn">You can view more information and sign up for the breakout sessions <a ng-href="#/talks">here</a>.</p>
-	<p ng-hide="loggedIn"><a ng-href="#/login">Log In</a> for more information and to sign up for the breakout sessions.</p>
+	<p>You can view more information and sign up for the breakout sessions <a ng-href="#/talks">here</a>.</p>
+	<p><a ng-href="#/login">Log In</a> for more information and to sign up for the breakout sessions.</p>
 </div>

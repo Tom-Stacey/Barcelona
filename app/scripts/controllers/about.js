@@ -40,7 +40,8 @@ angular.module('barcelonaApp')
   	};
 
   	this.setMainImage = function(imgNum) {
-  		mainImageNum = imgNum;
+      // this is where you will have to update the main image of the page to correspond to the passed image number
+      return imgNum;
   	};
 
   });

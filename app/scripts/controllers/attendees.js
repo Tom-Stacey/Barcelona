@@ -18,12 +18,8 @@
 	  		$scope.attendeeIndex = $scope.atts.length;
 	  	};
 
-	  	$scope.$on('SCROLL_TO_BOTTOM', function() {
-	  		var newAtts = attendeesService.getNextFiveAttendees($scope.attendeeIndex);
-	  		$scope.atts = $scope.atts.concat(newAtts);
-	  		$scope.updateIndex();
+	  	$scope.$on('<<EVENT>>', function() {
 
-	  		$scope.$apply();
 	  	});
 
 	  });
