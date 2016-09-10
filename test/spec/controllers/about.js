@@ -18,6 +18,6 @@ describe('Controller: AboutCtrl', function () {
   }));
 
   it('should attach a list of amenities to the scope', function () {
-    expect(AboutCtrl.amenities.length).toBe(4);
+    expect(AboutCtrl.amenities.length).toBe(5);
   });
 });
