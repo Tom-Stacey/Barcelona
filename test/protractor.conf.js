@@ -1,3 +1,4 @@
+'use strict';
 require('jasmine-given');
 
 // Protractor configuration 
