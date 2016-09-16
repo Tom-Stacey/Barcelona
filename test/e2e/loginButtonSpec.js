@@ -1,10 +1,7 @@
-/** Negative flow to test -
- ** 1) Successful Login
- ** 2) Successful Logout
- ** 3) Tampering of login credentials
- ** 4) Unsuccessful Login
+/*
+ * Test that Login button is working as expected.
  */
-describe('Negative Authentication Flow', function () {
+describe('AngularJS App', function () {
 
 		// *** Page Object Code ***
 	  describe('visiting the main page', function () {
@@ -31,23 +28,4 @@ describe('Negative Authentication Flow', function () {
 	        });
 	    }); 
 	});
-
-  	// Enter correct credentials to login field
-  	describe('when a user enters a correct username and password', function() {
-  		it('should successfully log the user into the application', function() {
-  			element(By.model("email")).sendKeys("tom@qa.com");
-  			element(By.model("pass")).sendKeys("admin");
-
-  			element(By.id("submit")).click()
-
-  			expect(browser.getCurrentUrl()).toEqual('http://localhost:9000/#/login');
-  		});
-  	});
-
-  	// Logout of application
-  	describe('when a user clicks the logout button', function () {
-  		it('should successfully log the user out of the application', function() {
-  			element(By.id("TODO")).click();
-  		});
-  	});
 });
