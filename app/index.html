@@ -43,16 +43,16 @@
             </a>
             <ul class="nav navbar-nav">
               <li ng-class="{active: baseCtrl.isSet(1)}">
-                <a ng-href="#/" ng-click="baseCtrl.setTab(1)">Home</a>
+                <a id="home" ng-href="#/" ng-click="baseCtrl.setTab(1)">Home</a>
               </li>
               <li ng-class="{active: baseCtrl.isSet(2)}">
-                <a ng-href="#/about" ng-click="baseCtrl.setTab(2)">About</a>
+                <a id="about" ng-href="#/about" ng-click="baseCtrl.setTab(2)">About</a>
               </li>
               <li ng-show="loggedIn" ng-class="{active: baseCtrl.isSet(3)}">
-                <a ng-href="#/talks" ng-click="baseCtrl.setTab(3)">Talks</a>
+                <a id="talks" ng-href="#/talks" ng-click="baseCtrl.setTab(3)">Talks</a>
               </li>
               <li ng-show="loggedIn" ng-class="{active: baseCtrl.isSet(4)}">
-                <a ng-href="#/attendees" ng-click="baseCtrl.setTab(4)">Attendees</a>
+                <a id="attendees" ng-href="#/attendees" ng-click="baseCtrl.setTab(4)">Attendees</a>
               </li>
             </ul>
           <div class="loginSection">
@@ -61,7 +61,7 @@
             </div>
             <div ng-show="loggedIn">
               <span id="hi-usr">Hi, Tom!</span>
-              <a class="btn btn-primary" role="button" ng-click="baseCtrl.logOut()">Log out</a>
+              <a id="logout-btn" class="btn btn-primary" role="button" ng-click="baseCtrl.logOut()">Log out</a>
             </div>
           </div>
           </div>
